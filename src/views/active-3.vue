@@ -24,6 +24,9 @@
                 </div>
             </div>
         </div>
+
+        <audio src="@/assets/error.mp3" ref="error"></audio>
+        <audio src="@/assets/right.mp3" ref="right"></audio>
     </div>
 </template>
 
@@ -65,14 +68,40 @@ export default {
         changeIndex(index) {
             this.$store.commit("SET_INDEX", index)
         },
-        selectItem() {
+        selectItem(index) {
 
-            if(this.questionIndex === this.question2.length - 1) {
-                alert("答题结束")
+            if(this.answer) {
                 return
             }
 
-            this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
+            this.answer = true
+
+            if(this.question2[this.questionIndex].answer[index].istrue) {
+                layer.open({
+                    content: "答题正确",
+                    skin: 'msg',
+                    time: 1 // 2秒后自动关闭
+                })
+                this.$refs.right.play()
+            }else {
+                layer.open({
+                    content: "答题错误",
+                    skin: 'msg',
+                    time: 1 // 2秒后自动关闭
+                })
+                this.$refs.error.play()
+            }
+
+            if(this.questionIndex === this.question2.length - 1) {
+                alert("答题结束")
+                this.$store.commit("SET_INDEX", 1)
+                return
+            }
+
+            setTimeout(() => {
+                this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
+                this.answer = false
+            }, 1000)
         }
     },
     computed: {

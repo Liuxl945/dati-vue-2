@@ -73,6 +73,11 @@ html,body{
     height: 100%;
     overflow: hidden;
 }
+
+.layui-m-layer-msg{
+    bottom: 0 !important;
+}
+
 </style>
 
 <style lang="scss" scoped>

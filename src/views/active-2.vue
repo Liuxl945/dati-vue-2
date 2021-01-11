@@ -48,7 +48,11 @@ export default {
 
             if(this.time === 0) {
 
-                alert("答题结束")
+                layer.open({
+                    content: "答题结束",
+                    skin: 'msg',
+                    time: 1 // 2秒后自动关闭
+                })
 
                 return
             }
@@ -67,6 +71,7 @@ export default {
 
             if(this.questionIndex === this.question1.length - 1) {
                 alert("答题结束")
+                this.$store.commit("SET_INDEX", 1)
                 return
             }
 

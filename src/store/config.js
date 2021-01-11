@@ -109,13 +109,14 @@ export const question1 = [
 
 export const question2 = [
     {
-        title: "吸一支大麻烟对肺功能的影响比一支烟大（10倍）倍。",
+        title: "吸一支大麻烟对肺功能的影响比一支烟大（ ）倍。",
         answer: [
             {
                 "name": "A、5倍"
             },
             {
-                "name": "B、10倍"
+                "name": "B、10倍",
+                "istrue": true
             },
             {
                 "name": "C、15倍"
@@ -126,7 +127,7 @@ export const question2 = [
         ]
     },
     {
-        title: "不属于阿片类的毒品的是（冰毒）。",
+        title: "不属于阿片类的毒品的是（ ）。",
         answer: [
             {
                 "name": "A、吗啡"
@@ -135,7 +136,8 @@ export const question2 = [
                 "name": "B、海洛因"
             },
             {
-                "name": "C、冰毒"
+                "name": "C、冰毒",
+                "istrue": true
             },
             {
                 "name": "D、美沙酮"
@@ -143,13 +145,14 @@ export const question2 = [
         ]
     },
     {
-        title: "鸦片战争前，中国吸食鸦片的人口约在（200万）人以上",
+        title: "鸦片战争前，中国吸食鸦片的人口约在（ ）人以上",
         answer: [
             {
                 "name": "A、100万"
             },
             {
-                "name": "B、200万"
+                "name": "B、200万",
+                "istrue": true
             },
             {
                 "name": "C、250万"
@@ -160,7 +163,7 @@ export const question2 = [
         ]
     },
     {
-        title: "民国时期向中国输入毒品最多的是（日本）国家？",
+        title: "民国时期向中国输入毒品最多的是（ ）国家？",
         answer: [
             {
                 "name": "A、英国"
@@ -172,15 +175,17 @@ export const question2 = [
                 "name": "C、德国"
             },
             {
-                "name": "D、日本"
+                "name": "D、日本",
+                "istrue": true
             }
         ]
     },
     {
-        title: "毒品区别于毒物的自然特征是（依赖性）",
+        title: "毒品区别于毒物的自然特征是（ ）",
         answer: [
             {
-                "name": "A、依赖性"
+                "name": "A、依赖性",
+                "istrue": true
             },
             {
                 "name": "B、非法性"
@@ -194,7 +199,7 @@ export const question2 = [
         ]
     },
     {
-        title: "走私、贩卖、运输、制造海洛因（50克）克，可判处死刑。",
+        title: "走私、贩卖、运输、制造海洛因（ ）克，可判处死刑。",
         answer: [
             {
                 "name": "A、20克"
@@ -206,12 +211,13 @@ export const question2 = [
                 "name": "C、40克"
             },
             {
-                "name": "D、50克"
+                "name": "D、50克",
+                "istrue": true
             }
         ]
     },
     {
-        title: "下面哪种毒品属于新型毒品（K粉）。",
+        title: "下面哪种毒品属于新型毒品（ ）。",
         answer: [
             {
                 "name": "A、鸦片"
@@ -220,7 +226,8 @@ export const question2 = [
                 "name": "B、海洛因"
             },
             {
-                "name": "C、K粉"
+                "name": "C、K粉",
+                "istrue": true
             },
             {
                 "name": "D、吗啡"
@@ -228,7 +235,7 @@ export const question2 = [
         ]
     },
     {
-        title: "下面哪种不属于兴奋剂类毒品（海洛因）",
+        title: "下面哪种不属于兴奋剂类毒品（ ）",
         answer: [
             {
                 "name": "A、冰毒"
@@ -240,12 +247,13 @@ export const question2 = [
                 "name": "C、可卡因"
             },
             {
-                "name": "D、海洛因"
+                "name": "D、海洛因",
+                "istrue": true
             }
         ]
     },
     {
-        title: "林则徐《虎门销烟》在我国（广东）省。",
+        title: "林则徐《虎门销烟》在我国（ ）省。",
         answer: [
             {
                 "name": "A、上海"
@@ -254,7 +262,8 @@ export const question2 = [
                 "name": "B、江苏"
             },
             {
-                "name": "C、广东"
+                "name": "C、广东",
+                "istrue": true
             },
             {
                 "name": "D、福建"
@@ -262,10 +271,11 @@ export const question2 = [
         ]
     },
     {
-        title: "我们从电视或书本上读到的“大烟”（鸦片）。",
+        title: "我们从电视或书本上读到的“大烟”（ ）。",
         answer: [
             {
-                "name": "A、鸦片"
+                "name": "A、鸦片",
+                "istrue": true
             },
             {
                 "name": "B、冰毒"
@@ -279,13 +289,14 @@ export const question2 = [
         ]
     },
     {
-        title: "以下不是合成毒品是（大麻）。",
+        title: "以下不是合成毒品是（ ）。",
         answer: [
             {
                 "name": "A、摇头丸"
             },
             {
-                "name": "B、大麻"
+                "name": "B、大麻",
+                "istrue": true
             },
             {
                 "name": "C、冰毒"
@@ -296,13 +307,14 @@ export const question2 = [
         ]
     },
     {
-        title: "以下（冰毒）是致幻剂。",
+        title: "以下（ ）是致幻剂。",
         answer: [
             {
                 "name": "A、阿片"
             },
             {
-                "name": "B、冰毒"
+                "name": "B、冰毒",
+                "istrue": true
             },
             {
                 "name": "C、大麻"
@@ -310,10 +322,11 @@ export const question2 = [
         ]
     },
     {
-        title: "以下（苯丙胺类）是兴奋剂。",
+        title: "以下（ ）是兴奋剂。",
         answer: [
             {
-                "name": "A、苯丙胺类"
+                "name": "A、苯丙胺类",
+                "istrue": true
             },
             {
                 "name": "B、安定类"
@@ -324,10 +337,11 @@ export const question2 = [
         ]
     },
     {
-        title: "（青少年）是新型毒品预防教育的重点对象。",
+        title: "（ ）是新型毒品预防教育的重点对象。",
         answer: [
             {
-                "name": "A、青少年"
+                "name": "A、青少年",
+                "istrue": true
             },
             {
                 "name": "B、中年人"
@@ -338,10 +352,11 @@ export const question2 = [
         ]
     },
     {
-        title: "毒品原植物是指罂粟（大麻）和古柯树。",
+        title: "毒品原植物是指罂粟（ ）和古柯树。",
         answer: [
             {
-                "name": "A、大麻"
+                "name": "A、大麻",
+                "istrue": true
             },
             {
                 "name": "B、黄杨"
@@ -352,13 +367,14 @@ export const question2 = [
         ]
     },
     {
-        title: "西方国家吸食的最普通的毒品是（大麻）。",
+        title: "西方国家吸食的最普通的毒品是（ ）。",
         answer: [
             {
                 "name": "A、吗啡"
             },
             {
-                "name": "B、大麻"
+                "name": "B、大麻",
+                "istrue": true
             },
             {
                 "name": "C、杜冷丁"
@@ -369,13 +385,14 @@ export const question2 = [
         ]
     },
     {
-        title: "（闲着无聊）是吸毒人群中初次吸毒比例最高的原因。",
+        title: "（ ）是吸毒人群中初次吸毒比例最高的原因。",
         answer: [
             {
                 "name": "A、好奇心驱"
             },
             {
-                "name": "B、闲着无聊"
+                "name": "B、闲着无聊",
+                "istrue": true
             },
             {
                 "name": "C、取乐解闷"
@@ -383,10 +400,11 @@ export const question2 = [
         ]
     },
     {
-        title: "吗啡、海洛因是从（鸦片）中提取的。",
+        title: "吗啡、海洛因是从（ ）中提取的。",
         answer: [
             {
-                "name": "A、鸦片"
+                "name": "A、鸦片",
+                "istrue": true
             },
             {
                 "name": "B、可卡因"
@@ -397,13 +415,14 @@ export const question2 = [
         ]
     },
     {
-        title: "海洛因，俗称（白粉）、白面。",
+        title: "海洛因，俗称（ ）、白面。",
         answer: [
             {
                 "name": "A、大烟"
             },
             {
-                "name": "B、白粉"
+                "name": "B、白粉",
+                "istrue": true
             },
             {
                 "name": "C、冰"
