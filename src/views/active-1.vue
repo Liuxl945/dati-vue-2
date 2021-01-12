@@ -1,10 +1,12 @@
 <template>
     <div class="main">
+
+        <img class="back-iamge" @click="backNav" src="../assets/back1.png">
         <img class="bg-iamge" src="../assets/background1.png">
 
         <div class="fiexd-box">
             <img class="button-iamge" @click="changeIndex(2)" src="../assets/button1.png">
-            <img class="button-iamge" @click="changeIndex(3)" src="../assets/button1.png">
+            <img class="button-iamge" @click="changeIndex(3)" src="../assets/button2.png">
         </div>
     </div>
 </template>
@@ -12,6 +14,9 @@
 <script>
 export default {
     methods: {
+        backNav() {
+            console.log(back)
+        },
         changeIndex(index) {
             this.$store.commit("SET_INDEX", index)
             this.$store.commit("SET_QUESTION_INDEX", 0)
@@ -40,6 +45,15 @@ export default {
     bottom: 0;
     // top: 50%;
     // transform: translateY(-50%);
+}
+
+.back-iamge{
+    position: absolute;
+    z-index: 100;
+    left: rem(40);
+    top: rem(40);
+    width: rem(176/1.5);
+    height: rem(176/1.5);
 }
 
 .fiexd-box{
