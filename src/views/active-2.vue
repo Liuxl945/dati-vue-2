@@ -37,14 +37,22 @@ import { mapState } from "vuex"
 export default {
     data() {
         return {
-            time: 60
+            time: 120
         }
     },
     mounted() {
+        this.active = true
         this.timerFunc()
+    },
+    beforeDestroy() {
+        this.active = false
     },
     methods: {
         timerFunc() {
+            // 如果这个页面退出了   清除定时器
+            if(!this.active) {
+                return
+            }
 
             if(this.time === 0) {
 
@@ -67,15 +75,32 @@ export default {
         changeIndex(index) {
             this.$store.commit("SET_INDEX", index)
         },
-        selectItem() {
+        selectItem(index) {
 
-            if(this.questionIndex === this.question1.length - 1) {
-                alert("答题结束")
-                this.$store.commit("SET_INDEX", 1)
+            if(this.answer) {
                 return
             }
 
-            this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
+            this.answer = true
+
+            layer.open({
+                content: index === 1 ? "是的" : "不是",
+                skin: 'msg',
+                time: 1 // 2秒后自动关闭
+            })
+
+            setTimeout(() => {
+                if(this.questionIndex === this.question1.length - 1) {
+                    alert("答题结束")
+                    this.$store.commit("SET_INDEX", 1)
+                    return
+                }
+
+                this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
+                this.answer = false
+            }, 1000)
+
+            
         }
     },
     computed: {

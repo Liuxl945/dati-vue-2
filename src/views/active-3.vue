@@ -16,10 +16,10 @@
 
             <div class="question-wapper">
                 <div class="title">
-                    {{question2[questionIndex].title}}
+                    {{question3[questionIndex].title}}
                 </div>
 
-                <div class="anser-list" v-for="(item,index) in question2[questionIndex].answer" :key="index" @click="selectItem(index)">
+                <div class="anser-list" v-for="(item,index) in question3[questionIndex].answer" :key="index" @click="selectItem(index)">
                     {{item.name}}
                 </div>
             </div>
@@ -42,18 +42,30 @@ export default {
     },
     data() {
         return {
-            time: 60
+            time: 60,
+            right: 0,
+            error: 0
         }
     },
     mounted() {
+        this.right = 0
+        this.error = 0
+        this.active = true
         this.timerFunc()
+    },
+    beforeDestroy() {
+        this.active = false
     },
     methods: {
         timerFunc() {
+            // 如果这个页面退出了   清除定时器
+            if(!this.active) {
+                return
+            }
 
             if(this.time === 0) {
 
-                alert("答题结束")
+                alert(`答题结束,答对${this.right}题,答错${this.error}题`)
 
                 return
             }
@@ -76,7 +88,8 @@ export default {
 
             this.answer = true
 
-            if(this.question2[this.questionIndex].answer[index].istrue) {
+            if(this.question3[this.questionIndex].answer[index].istrue) {
+                this.right ++
                 layer.open({
                     content: "答题正确",
                     skin: 'msg',
@@ -84,6 +97,7 @@ export default {
                 })
                 this.$refs.right.play()
             }else {
+                this.error ++
                 layer.open({
                     content: "答题错误",
                     skin: 'msg',
@@ -92,13 +106,14 @@ export default {
                 this.$refs.error.play()
             }
 
-            if(this.questionIndex === this.question2.length - 1) {
-                alert("答题结束")
-                this.$store.commit("SET_INDEX", 1)
-                return
-            }
-
             setTimeout(() => {
+                
+                if(this.questionIndex === this.question3.length - 1) {
+                    alert(`答题结束,答对${this.right}题,答错${this.error}题`)
+                    this.$store.commit("SET_INDEX", 1)
+                    return
+                }
+                
                 this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
                 this.answer = false
             }, 1000)
@@ -106,11 +121,11 @@ export default {
     },
     computed: {
         lastIndex() {
-            return this.question2.length - this.questionIndex - 1
+            return this.question3.length - this.questionIndex - 1
         },
         ...mapState({
             questionIndex: state => state.questionIndex,
-            question2: state => state.question2,
+            question3: state => state.question3,
         })
     }
 }
