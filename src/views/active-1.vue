@@ -5,8 +5,8 @@
         <img class="bg-iamge" src="../assets/background1.png">
 
         <div class="fiexd-box">
-            <img class="button-iamge" @click="changeIndex(2)" src="../assets/button1.png">
             <img class="button-iamge" @click="changeIndex(3)" src="../assets/button2.png">
+            <img class="button-iamge" @click="changeIndex(2)" src="../assets/button1.png">
         </div>
     </div>
 </template>
