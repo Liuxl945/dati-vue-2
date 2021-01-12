@@ -67,6 +67,10 @@ export default {
 
                 alert(`答题结束,答对${this.right}题,答错${this.error}题`)
 
+                setTimeout(() => {
+                    this.$store.commit("SET_INDEX", 1)
+                }, 1000)
+
                 return
             }
 
