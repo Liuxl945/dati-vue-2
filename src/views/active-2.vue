@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <img class="bg-iamge" src="../assets/background2.png">
+        <img class="bg-iamge" src="../assets/background3.png">
 
         <div class="back-button" @click="changeIndex(1)">
             <img class="image" src="../assets/back2.png">
@@ -16,10 +16,10 @@
 
             <div class="question-wapper">
                 <div class="title">
-                    {{question2[questionIndex].title}}
+                    {{question3[questionIndex].title}}
                 </div>
 
-                <div class="anser-list" v-for="(item,index) in question2[questionIndex].answer" :key="index" @click="selectItem(index)">
+                <div class="anser-list" v-for="(item,index) in question3[questionIndex].answer" :key="index" @click="selectItem(index)">
                     {{item.name}}
                 </div>
                 
@@ -90,7 +90,7 @@ export default {
 
             this.answer = true
 
-            if(this.question2[this.questionIndex].answer[index].istrue) {
+            if(this.question3[this.questionIndex].answer[index].istrue) {
                 this.right ++
                 layer.open({
                     content: "答题正确",
@@ -109,7 +109,7 @@ export default {
             }
 
             setTimeout(() => {
-                if(this.questionIndex === this.question2.length - 1) {
+                if(this.questionIndex === this.question3.length - 1) {
                     alert(`答题结束,答对${this.right}题,答错${this.error}题`)
                     this.$store.commit("SET_INDEX", 1)
                     return
@@ -124,11 +124,11 @@ export default {
     },
     computed: {
         lastIndex() {
-            return this.question2.length - this.questionIndex - 1
+            return this.question3.length - this.questionIndex - 1
         },
         ...mapState({
             questionIndex: state => state.questionIndex,
-            question2: state => state.question2,
+            question3: state => state.question3,
         })
     }
 }
