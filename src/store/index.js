@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { question1, question2 } from "./config"
+import { question1, question2, question3 } from "./config"
 
 Vue.use(Vuex)
 
@@ -10,6 +10,8 @@ export default new Vuex.Store({
         question1: question1,
 
         question2: question2,
+
+        question3: question3,
 
         questionIndex: 0,
 

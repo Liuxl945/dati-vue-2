@@ -430,3 +430,165 @@ export const question2 = [
         ]
     }
 ]
+
+export const question3 = [
+    {
+        title: "您对新型饮料和零食感兴趣吗？",
+        answer: [
+            {
+                "name": "A、不感兴趣",
+                "istrue": true
+            },
+            {
+                "name": "B、偶尔接触"
+            },
+            {
+                "name": "C、经常食用"
+            },
+            {
+                "name": "D、家常便饭"
+            }
+        ]
+    },
+    {
+        title: "您经常光顾夜店、KTV、或酒吧吗？",
+        answer: [
+            {
+                "name": "A、不感兴趣",
+                "istrue": true
+            },
+            {
+                "name": "B、偶尔接触"
+            },
+            {
+                "name": "C、经常光顾"
+            },
+            {
+                "name": "D、每天都去"
+            }
+        ]
+    },
+    {
+        title: "您认识的人，他(她)吸食过毒品吗？",
+        answer: [
+            {
+                "name": "A、不曾吸毒",
+                "istrue": true
+            },
+            {
+                "name": "B、没听说过"
+            },
+            {
+                "name": "C、已经戒了"
+            },
+            {
+                "name": "D、还在吸毒"
+            }
+        ]
+    },
+    {
+        title: "您对了解毒品对人的危害吗？",
+        answer: [
+            {
+                "name": "A、充分了解",
+                "istrue": true
+            },
+            {
+                "name": "B、了解部分"
+            },
+            {
+                "name": "C、偶尔听说"
+            },
+            {
+                "name": "D、毫无认知"
+            }
+        ]
+    },
+    {
+        title: "毒品都是粉末状、植物类、液体类吗？",
+        answer: [
+            {
+                "name": "A、不完全是",
+                "istrue": true
+            },
+            {
+                "name": "B、好像是的"
+            },
+            {
+                "name": "C、我不知道"
+            }
+        ]
+    },
+    {
+        title: "您对新鲜事物感兴趣吗？",
+        answer: [
+            {
+                "name": "A、不感兴趣",
+                "istrue": true
+            },
+            {
+                "name": "B、偶尔接触"
+            },
+            {
+                "name": "C、经常参与"
+            }
+        ]
+    },
+    {
+        title: "您是否认为绝大多数规章制度都不合理，应该废除？",
+        answer: [
+            {
+                "name": "A、极其合理",
+                "istrue": true
+            },
+            {
+                "name": "B、我不清楚"
+            },
+            {
+                "name": "C、很不合理"
+            }
+        ]
+    },
+    {
+        title: "您是否经常抱有侥幸心理？",
+        answer: [
+            {
+                "name": "A、没有过",
+                "istrue": true
+            },
+            {
+                "name": "B、偶尔有"
+            },
+            {
+                "name": "C、经常有"
+            }
+        ]
+    },
+    {
+        title: "您是否相信他人口中说的一些奇特事物，或现象？",
+        answer: [
+            {
+                "name": "A、从不相信",
+                "istrue": true
+            },
+            {
+                "name": "B、有些好奇"
+            },
+            {
+                "name": "C、经常相信"
+            }
+        ]
+    },
+    {
+        title: "您的年龄？",
+        answer: [
+            {
+                "name": "A、18岁以下",
+                "istrue": true
+            },
+            {
+                "name": "B、18岁以上"
+            }
+        ]
+    },
+]

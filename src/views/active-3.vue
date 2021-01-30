@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <img class="bg-iamge" src="../assets/background3.png">
+        <img class="bg-iamge" src="../assets/background2.png">
 
         <div class="back-button" @click="changeIndex(1)">
             <img class="image" src="../assets/back2.png">
@@ -42,18 +42,34 @@ export default {
     },
     data() {
         return {
-            time: 60
+            time: 60,
+            right: 0,
+            error: 0
         }
     },
     mounted() {
+        this.right = 0
+        this.error = 0
+        this.active = true
         this.timerFunc()
+    },
+    beforeDestroy() {
+        this.active = false
     },
     methods: {
         timerFunc() {
+            // 如果这个页面退出了   清除定时器
+            if(!this.active) {
+                return
+            }
 
             if(this.time === 0) {
 
-                alert("答题结束")
+                alert(`答题结束,答对${this.right}题,答错${this.error}题`)
+
+                setTimeout(() => {
+                    this.$store.commit("SET_INDEX", 1)
+                }, 1000)
 
                 return
             }
@@ -77,6 +93,7 @@ export default {
             this.answer = true
 
             if(this.question2[this.questionIndex].answer[index].istrue) {
+                this.right ++
                 layer.open({
                     content: "答题正确",
                     skin: 'msg',
@@ -84,6 +101,7 @@ export default {
                 })
                 this.$refs.right.play()
             }else {
+                this.error ++
                 layer.open({
                     content: "答题错误",
                     skin: 'msg',
@@ -92,13 +110,14 @@ export default {
                 this.$refs.error.play()
             }
 
-            if(this.questionIndex === this.question2.length - 1) {
-                alert("答题结束")
-                this.$store.commit("SET_INDEX", 1)
-                return
-            }
-
             setTimeout(() => {
+                
+                if(this.questionIndex === this.question2.length - 1) {
+                    alert(`答题结束,答对${this.right}题,答错${this.error}题`)
+                    this.$store.commit("SET_INDEX", 1)
+                    return
+                }
+                
                 this.$store.commit("SET_QUESTION_INDEX", this.questionIndex + 1)
                 this.answer = false
             }, 1000)
